@@ -1,0 +1,39 @@
+project:
+  name: WONCA_RAG
+  experiment_name: WONCA_integrative_review_RAG
+  random_seed: 42
+
+screening:
+  labels: [S, N, D]
+  dimensions:
+    - concepcao
+    - desenvolvimento
+    - avaliacao
+  fulltext_review_if_d: true
+
+temporal_rag:
+  enabled: true
+  allow_future_articles: false
+
+chunking:
+  chunk_size_tokens: 1000
+  chunk_overlap_tokens: 150
+
+retrieval:
+  method: hybrid
+  semantic_top_k: 12
+  bm25_top_k: 12
+  final_top_k: 8
+
+model_runtime:
+  temperature: 0.0
+  max_output_tokens: 4000
+  save_raw_response: true
+  save_evidence: true
+  save_token_usage: true
+  save_latency: true
+
+pipeline:
+  resume: true
+  pipeline_version: 0.1.0
+  prompt_version: draft_v0

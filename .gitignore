@@ -1,0 +1,70 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Virtual env
+.venv/
+venv/
+env/
+
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Private/raw data
+data/raw/pdf/*
+!data/raw/pdf/.gitkeep
+data/human/*
+!data/human/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+data/metadata/*
+!data/metadata/.gitkeep
+
+# Generated artifacts
+artifacts/chunks/*
+!artifacts/chunks/.gitkeep
+artifacts/embeddings/*
+!artifacts/embeddings/.gitkeep
+artifacts/indexes/*
+!artifacts/indexes/.gitkeep
+artifacts/ledgers/*
+!artifacts/ledgers/.gitkeep
+
+# Generated outputs
+outputs/predictions/*
+!outputs/predictions/.gitkeep
+outputs/evidence/*
+!outputs/evidence/.gitkeep
+outputs/raw_responses/*
+!outputs/raw_responses/.gitkeep
+outputs/checkpoints/*
+!outputs/checkpoints/.gitkeep
+outputs/costs/*
+!outputs/costs/.gitkeep
+outputs/logs/*
+!outputs/logs/.gitkeep
+outputs/validation/*
+!outputs/validation/.gitkeep
+
+# Large/generated
+*.parquet
+*.faiss
+*.index
+*.npy
+*.npz
+
+# Keys
+*.pem
+*.key

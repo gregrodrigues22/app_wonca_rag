@@ -1,0 +1,133 @@
+models:
+  claude_sonnet_46:
+    display_name: Claude Sonnet 4.6
+    family: Claude
+    ownership: proprietary
+    size_category: large
+    domain: general
+    provider: amazon_bedrock
+    infrastructure: Amazon Bedrock
+    interface: converse_api
+    parameters_b: null
+    enabled: false
+    runtime:
+      model_id: null
+      reasoning_mode: null
+
+  amazon_nova_2_lite:
+    display_name: Amazon Nova 2 Lite
+    family: Nova
+    ownership: proprietary
+    size_category: compact
+    domain: general
+    provider: amazon_bedrock
+    infrastructure: Amazon Bedrock
+    interface: converse_api
+    parameters_b: null
+    enabled: false
+    runtime:
+      model_id: null
+      reasoning_mode: null
+
+  gemma_3_27b_it:
+    display_name: Gemma 3 27B IT
+    family: Gemma
+    ownership: open_weight
+    size_category: large
+    domain: general
+    provider: huggingface
+    infrastructure: Hugging Face
+    interface: openai_compatible
+    parameters_b: 27
+    enabled: false
+    runtime:
+      model_id: null
+      endpoint_url: null
+
+  gemma_3_4b_it:
+    display_name: Gemma 3 4B IT
+    family: Gemma
+    ownership: open_weight
+    size_category: compact
+    domain: general
+    provider: huggingface
+    infrastructure: Hugging Face
+    interface: openai_compatible
+    parameters_b: 4
+    enabled: false
+    runtime:
+      model_id: null
+      endpoint_url: null
+
+  medgemma_27b_text_it:
+    display_name: MedGemma 27B Text IT
+    family: MedGemma
+    ownership: open_weight
+    size_category: large
+    domain: health
+    provider: huggingface
+    infrastructure: Hugging Face
+    interface: openai_compatible
+    parameters_b: 27
+    enabled: false
+    runtime:
+      model_id: null
+      endpoint_url: null
+
+  medgemma_4b_it:
+    display_name: MedGemma 4B IT
+    family: MedGemma
+    ownership: open_weight
+    size_category: compact
+    domain: health
+    provider: huggingface
+    infrastructure: Hugging Face
+    interface: openai_compatible
+    parameters_b: 4
+    enabled: false
+    runtime:
+      model_id: null
+      endpoint_url: null
+
+  gpt_oss_20b:
+    display_name: OpenAI gpt-oss-20b
+    family: GPT-OSS
+    ownership: open_weight
+    size_category: compact
+    domain: general
+    provider: amazon_bedrock
+    infrastructure: Amazon Bedrock
+    interface: converse_api
+    parameters_b: 20
+    enabled: false
+    runtime:
+      model_id: null
+
+  gpt_oss_120b:
+    display_name: OpenAI gpt-oss-120b
+    family: GPT-OSS
+    ownership: open_weight
+    size_category: large
+    domain: general
+    provider: amazon_bedrock
+    infrastructure: Amazon Bedrock
+    interface: converse_api
+    parameters_b: 120
+    enabled: false
+    runtime:
+      model_id: null
+
+  openai_astra:
+    display_name: OpenAI Astra
+    family: GPT
+    ownership: proprietary
+    size_category: large
+    domain: general
+    provider: openai
+    infrastructure: OpenAI API
+    interface: responses_api
+    parameters_b: null
+    enabled: false
+    runtime:
+      model_id: null
+      reasoning_mode: null

@@ -1,0 +1,42 @@
+Metadata-Version: 2.4
+Name: wonca-rag
+Version: 0.1.0
+Summary: Temporal multi-model RAG pipeline for integrative review article screening.
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+Requires-Dist: pandas>=2.2
+Requires-Dist: numpy>=1.26
+Requires-Dist: pyarrow>=16
+Requires-Dist: PyYAML>=6.0
+Requires-Dist: python-dotenv>=1.0
+Requires-Dist: pydantic>=2.7
+Requires-Dist: tqdm>=4.66
+Requires-Dist: tenacity>=8.2
+Requires-Dist: rich>=13.7
+
+# WONCA RAG
+
+Pipeline multimodelo para análise automatizada de artigos de revisão integrativa, com RAG temporal, classificação S/N/D, rastreabilidade de evidências e comparação posterior com revisores humanos.
+
+## Princípios
+
+- Processamento em ordem cronológica.
+- Nenhum artigo poderá recuperar informação de artigos posteriores.
+- Avaliações humanas ficam separadas da inferência.
+- O RAG será compartilhado entre os modelos sempre que possível.
+- Cada modelo terá seu próprio histórico conceitual.
+- Código principal em `src/`, notebooks para execução e análise.
+
+## Setup no VS Code
+
+```powershell
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+python -m pip install --upgrade pip
+pip install -r requirements.txt
+python scripts/check_setup.py
+pytest
+```
+
+Copie `.env.example` para `.env` apenas quando começarmos a integrar APIs.
+Nunca publique `.env`, chaves, PDFs privados ou avaliações humanas no Git.
