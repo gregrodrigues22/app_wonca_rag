@@ -38,6 +38,26 @@ class RetrievalConfig(BaseModel):
     final_top_k: int = Field(gt=0)
 
 
+class OCRConfig(BaseModel):
+    enabled: bool = True
+    engine: str = "tesseract"
+    trigger: str = "zero_text_only"
+    language: str = "eng"
+    dpi: int = Field(default=300, ge=150, le=600)
+    psm: int = Field(default=3, ge=0, le=13)
+    min_characters_after_ocr: int = Field(default=100, ge=0)
+
+    @model_validator(mode="after")
+    def validate_ocr(self) -> "OCRConfig":
+        if self.engine != "tesseract":
+            raise ValueError("Only tesseract is supported in the current OCR stage.")
+        if self.trigger not in {"zero_text_only", "likely_scanned"}:
+            raise ValueError(
+                "ocr.trigger must be 'zero_text_only' or 'likely_scanned'"
+            )
+        return self
+
+
 class ModelRuntimeConfig(BaseModel):
     temperature: float = Field(ge=0)
     max_output_tokens: int = Field(gt=0)
@@ -65,6 +85,7 @@ class ExperimentConfig(BaseModel):
     temporal_rag: TemporalRAGConfig
     chunking: ChunkingConfig
     retrieval: RetrievalConfig
+    ocr: OCRConfig
     model_runtime: ModelRuntimeConfig
     pipeline: PipelineConfig
 

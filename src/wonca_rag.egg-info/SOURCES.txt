@@ -11,5 +11,9 @@ src/wonca_rag.egg-info/requires.txt
 src/wonca_rag.egg-info/top_level.txt
 src/wonca_rag/ingestion/__init__.py
 src/wonca_rag/ingestion/manifest.py
+src/wonca_rag/ingestion/ocr.py
+src/wonca_rag/ingestion/pdf_extractor.py
 tests/test_config.py
 tests/test_manifest.py
+tests/test_ocr.py
+tests/test_pdf_extractor.py

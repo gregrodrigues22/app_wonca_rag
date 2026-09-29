@@ -25,6 +25,15 @@ retrieval:
   bm25_top_k: 12
   final_top_k: 8
 
+ocr:
+  enabled: true
+  engine: tesseract
+  trigger: zero_text_only
+  language: eng
+  dpi: 300
+  psm: 3
+  min_characters_after_ocr: 100
+
 model_runtime:
   temperature: 0.0
   max_output_tokens: 4000
