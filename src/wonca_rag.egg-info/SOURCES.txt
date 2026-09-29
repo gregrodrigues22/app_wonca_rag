@@ -9,4 +9,7 @@ src/wonca_rag.egg-info/SOURCES.txt
 src/wonca_rag.egg-info/dependency_links.txt
 src/wonca_rag.egg-info/requires.txt
 src/wonca_rag.egg-info/top_level.txt
+src/wonca_rag/ingestion/__init__.py
+src/wonca_rag/ingestion/manifest.py
 tests/test_config.py
+tests/test_manifest.py
