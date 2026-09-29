@@ -18,6 +18,8 @@ Requires-Dist: PyMuPDF>=1.24
 Requires-Dist: pytesseract>=0.3.13
 Requires-Dist: Pillow>=10.0
 Requires-Dist: tiktoken>=0.7
+Requires-Dist: sentence-transformers>=3.0
+Requires-Dist: rank-bm25>=0.2.2
 
 # WONCA RAG
 

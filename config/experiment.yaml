@@ -24,6 +24,14 @@ retrieval:
   semantic_top_k: 12
   bm25_top_k: 12
   final_top_k: 8
+  fusion_method: rrf
+  rrf_k: 60
+
+embeddings:
+  provider: sentence_transformers
+  model_name: sentence-transformers/all-MiniLM-L6-v2
+  normalize_embeddings: true
+  batch_size: 32
 
 ocr:
   enabled: true

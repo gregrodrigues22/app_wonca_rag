@@ -36,6 +36,31 @@ class RetrievalConfig(BaseModel):
     semantic_top_k: int = Field(gt=0)
     bm25_top_k: int = Field(gt=0)
     final_top_k: int = Field(gt=0)
+    fusion_method: str = "rrf"
+    rrf_k: int = Field(default=60, gt=0)
+
+    @model_validator(mode="after")
+    def validate_retrieval(self) -> "RetrievalConfig":
+        if self.method != "hybrid":
+            raise ValueError("Current experiment expects retrieval.method='hybrid'.")
+        if self.fusion_method != "rrf":
+            raise ValueError("Current implementation supports fusion_method='rrf'.")
+        return self
+
+
+class EmbeddingsConfig(BaseModel):
+    provider: str = "sentence_transformers"
+    model_name: str
+    normalize_embeddings: bool = True
+    batch_size: int = Field(default=32, gt=0)
+
+    @model_validator(mode="after")
+    def validate_embeddings(self) -> "EmbeddingsConfig":
+        if self.provider != "sentence_transformers":
+            raise ValueError(
+                "Current implementation supports provider='sentence_transformers'."
+            )
+        return self
 
 
 class OCRConfig(BaseModel):
@@ -85,6 +110,7 @@ class ExperimentConfig(BaseModel):
     temporal_rag: TemporalRAGConfig
     chunking: ChunkingConfig
     retrieval: RetrievalConfig
+    embeddings: EmbeddingsConfig
     ocr: OCRConfig
     model_runtime: ModelRuntimeConfig
     pipeline: PipelineConfig

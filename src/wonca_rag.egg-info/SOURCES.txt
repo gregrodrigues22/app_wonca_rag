@@ -14,11 +14,17 @@ src/wonca_rag/ingestion/manifest.py
 src/wonca_rag/ingestion/ocr.py
 src/wonca_rag/ingestion/pdf_extractor.py
 src/wonca_rag/rag/__init__.py
+src/wonca_rag/rag/bm25.py
 src/wonca_rag/rag/chunking.py
 src/wonca_rag/rag/corpus.py
+src/wonca_rag/rag/embeddings.py
+src/wonca_rag/rag/hybrid.py
+src/wonca_rag/rag/retrieval.py
 tests/test_chunking.py
 tests/test_config.py
 tests/test_corpus.py
+tests/test_hybrid.py
 tests/test_manifest.py
 tests/test_ocr.py
 tests/test_pdf_extractor.py
+tests/test_retrieval_temporal.py
